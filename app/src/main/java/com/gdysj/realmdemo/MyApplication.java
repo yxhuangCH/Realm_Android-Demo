@@ -2,6 +2,8 @@ package com.gdysj.realmdemo;
 
 import android.app.Application;
 
+import com.facebook.stetho.Stetho;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -22,5 +24,7 @@ public class MyApplication extends Application {
         Realm.init(this);
         RealmConfiguration config = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(config);
+
+        Stetho.initializeWithDefaults(this);
     }
 }
